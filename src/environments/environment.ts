@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4200/api',
+  apiUrl: 'http://localhost:8080/api',
   firebase: {
     projectId: 'utopia-theatre',
     appId: '1:348711351609:web:4644abde6fb1ad81a164e8',
