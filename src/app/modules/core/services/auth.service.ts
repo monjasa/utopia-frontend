@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInWithRedirect, signOut } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithRedirect, signOut, User, user } from '@angular/fire/auth';
+import { first, Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
+  public user$: Observable<User | null>;
+
   constructor(private auth: Auth) {
+    this.user$ = user(this.auth);
   }
 
   async signIn(): Promise<never> {
@@ -15,5 +19,13 @@ export class AuthService {
 
   async signOut(): Promise<void> {
     return signOut(this.auth);
+  }
+
+  public getIdToken(): Observable<string | null> {
+    return this.user$
+      .pipe(
+        first(),
+        switchMap((user: User | null) => user?.getIdToken() ?? of(null)),
+      );
   }
 }

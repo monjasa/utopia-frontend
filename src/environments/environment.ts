@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:4200/api',
   firebase: {
     projectId: 'utopia-theatre',
     appId: '1:348711351609:web:4644abde6fb1ad81a164e8',
@@ -12,7 +14,6 @@ export const environment = {
     messagingSenderId: '348711351609',
     measurementId: 'G-6R4VCHNEWW',
   },
-  production: false
 };
 
 /*
