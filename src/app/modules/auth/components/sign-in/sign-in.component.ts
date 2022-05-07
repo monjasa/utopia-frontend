@@ -1,26 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../core/services/auth.service';
-import { Data } from '../../../admin/models/data.model';
-import { DataService } from '../../services/data.service';
+import { Component } from '@angular/core';
+import { AuthService } from '@core/services/auth.service';
 
 @Component({
   selector: 'auth-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
 
-  public data: Data | undefined;
-
-  constructor(private dataService: DataService, private authService: AuthService) {
+  constructor(private authService: AuthService) {
   }
 
-  ngOnInit(): void {
-    this.dataService.getData()
-      .subscribe(data => this.data = data);
-  }
-
-  async signIn(): Promise<void> {
-    await this.authService.signIn();
+  signIn() {
+    void this.authService.signIn();
   }
 }
