@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth, GoogleAuthProvider, signInWithRedirect, signOut, User, user } from '@angular/fire/auth';
-import { first, Observable, of, switchMap } from 'rxjs';
+import { Observable, of, switchMap, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +24,7 @@ export class AuthService {
   public getIdToken(): Observable<string | null> {
     return this.user$
       .pipe(
-        first(),
+        take(1),
         switchMap((user: User | null) => user?.getIdToken() ?? of(null)),
       );
   }

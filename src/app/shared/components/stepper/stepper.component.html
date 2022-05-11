@@ -1,0 +1,24 @@
+<section>
+  <header>
+    <h1>Step {{selectedIndex + 1}}</h1>
+  </header>
+  <nav>
+    <ol>
+      <ng-container *ngFor="let step of steps; let i = index">
+        <li [class.fw-bold]="selectedIndex === i">
+          <a>
+            <ng-container *ngIf="step.stepLabel; else labelText" [ngTemplateOutlet]="step.stepLabel.template"></ng-container>
+            <ng-template #labelText>{{step.label}}</ng-template>
+          </a>
+        </li>
+      </ng-container>
+    </ol>
+  </nav>
+  <div>
+    <ng-container [ngTemplateOutlet]="selected!.content"></ng-container>
+  </div>
+  <footer>
+    <button class="btn btn-primary" cdkStepperPrevious>Previous</button>
+    <button class="btn btn-primary" cdkStepperNext>Next</button>
+  </footer>
+</section>

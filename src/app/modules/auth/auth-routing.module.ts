@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/sign-in',
+    redirectTo: 'sign-in',
     pathMatch: 'full',
   },
 ];

@@ -1,0 +1,63 @@
+<shared-stepper linear="true">
+  <cdk-step [stepControl]="auditoriumForm">
+    <ng-template cdkStepLabel>
+      <span>Configure the auditorium</span>
+    </ng-template>
+    <div class="container-fluid">
+      <h2>Auditorium</h2>
+      <form [formGroup]="auditoriumForm">
+        <label for="auditorium-name">Name:</label>
+        <input type="text" id="auditorium-name" formControlName="name">
+      </form>
+      <p>{{auditoriumForm.value | json}}</p>
+    </div>
+  </cdk-step>
+
+  <cdk-step [stepControl]="auditoriumPartsForm">
+    <ng-template cdkStepLabel>
+      <span>Configure auditorium parts</span>
+    </ng-template>
+    <div class="container-fluid">
+      <h2>Auditorium parts</h2>
+      <form [formGroup]="auditoriumPartsForm">
+        <ng-container formArrayName="parts">
+          <ng-container *ngFor="let auditoriumPart of auditoriumPartsFormArray.controls; let i = index">
+            <div class="container" [formGroupName]="i">
+              <div class="row">
+                <div class="col-12">
+                  <label for="auditorium-part-name-{{i}}" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="auditorium-part-name-{{i}}" formControlName="name">
+                </div>
+              </div>
+              <div class="row" formGroupName="dimension">
+                <div class="col-6">
+                  <label for="auditorium-part-rows-{{i}}" class="form-label">Rows</label>
+                  <input type="number" class="form-control" id="auditorium-part-rows-{{i}}" formControlName="rows">
+                </div>
+                <div class="col-6">
+                  <label for="auditorium-part-seats-{{i}}" class="form-label">Seats</label>
+                  <input type="number" class="form-control" id="auditorium-part-seats-{{i}}" formControlName="seats">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" class="btn btn-danger" (click)="removeAuditoriumPartForm(i)">Remove</button>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </form>
+      <button type="button" class="btn btn-primary" (click)="addAuditoriumPartForm()">Add another auditorium part
+      </button>
+      <p>{{auditoriumPartsForm.value | json}}</p>
+    </div>
+  </cdk-step>
+
+  <cdk-step>
+    <ng-template cdkStepLabel>
+      <span>Configure auditorium seats</span>
+    </ng-template>
+    <div class="container-fluid">
+      <h2>Auditorium seats</h2>
+    </div>
+  </cdk-step>
+</shared-stepper>
