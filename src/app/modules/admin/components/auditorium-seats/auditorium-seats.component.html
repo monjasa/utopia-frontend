@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <h2>Auditorium seats</h2>
+  <div *ngIf="auditorium">
+    <admin-auditorium-parts-grid [auditoriumParts]="auditorium.parts"></admin-auditorium-parts-grid>
+    <p>{{auditorium | json}}</p>
+  </div>
+</div>

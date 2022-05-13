@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'admin-auditorium',
@@ -8,37 +8,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 })
 export class AuditoriumComponent {
 
-  auditoriumForm = this.fb.group({
-    name: [undefined, Validators.required],
-  });
+  @Input()
+  public auditoriumForm: FormGroup | undefined;
 
-  auditoriumPartsForm = this.fb.group({
-    parts: this.fb.array([this.createAuditoriumPartForm()], Validators.required),
-  });
-
-  constructor(private fb: FormBuilder) {
-  }
-
-  private createAuditoriumPartForm() {
-    return this.fb.group({
-      name: [undefined, Validators.required],
-      dimension: this.fb.group({
-        rows: [10, Validators.required],
-        seats: [15, Validators.required],
-      }),
-    });
-  }
-
-  addAuditoriumPartForm() {
-    const auditoriumPartForm = this.createAuditoriumPartForm();
-    this.auditoriumPartsFormArray.push(auditoriumPartForm);
-  }
-
-  removeAuditoriumPartForm(index: number) {
-    this.auditoriumPartsFormArray.removeAt(index);
-  }
-
-  get auditoriumPartsFormArray(): FormArray {
-    return this.auditoriumPartsForm.get('parts') as FormArray;
-  }
 }

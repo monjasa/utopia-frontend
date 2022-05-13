@@ -1,0 +1,6 @@
+<div class="container-fluid d-flex flex-column align-items-center" *ngIf="auditoriumParts">
+  <ng-container *ngFor="let auditoriumPart of auditoriumParts">
+    <span>{{auditoriumPart.name}}</span>
+    <admin-auditorium-part-grid [auditoriumPart]="auditoriumPart"></admin-auditorium-part-grid>
+  </ng-container>
+</div>
