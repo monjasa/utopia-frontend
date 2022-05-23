@@ -21,5 +21,5 @@ export class AuditoriumSeatPricingPolicyComponent {
 
   get color(): string {
     return this.auditoriumSeatPricingPolicy ? COLOR_PALETTE[this.auditoriumSeatPricingPolicy.displayPosition] : '';
-  };
+  }
 }

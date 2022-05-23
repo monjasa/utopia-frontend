@@ -33,10 +33,13 @@ export class AuditoriumStepperComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const seatPricingPoliciesForm = this.auditoriumSeatPricingPoliciesForm.get('seatPricingPolicies') as FormGroup;
+    const partsForm = this.auditoriumPartsForm.get('parts') as FormGroup;
+
     this.auditorium$ = combineLatest([
       this.auditoriumForm.valueChanges,
-      this.auditoriumSeatPricingPoliciesForm.get('seatPricingPolicies')!.valueChanges,
-      this.auditoriumPartsForm.get('parts')!.valueChanges,
+      seatPricingPoliciesForm.valueChanges,
+      partsForm.valueChanges,
     ]).pipe(
       map(([auditorium, auditoriumSeatPricingPolicies, auditoriumParts]: [Auditorium, AuditoriumSeatPricingPolicy[], AuditoriumPart[]]) => {
         auditorium.seatPricingPolicies = auditoriumSeatPricingPolicies;
