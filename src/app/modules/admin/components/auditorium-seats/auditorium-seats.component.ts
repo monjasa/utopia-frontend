@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Auditorium } from '../../models/auditorium.model';
 import { Observable } from 'rxjs';
 
@@ -7,21 +7,8 @@ import { Observable } from 'rxjs';
   templateUrl: './auditorium-seats.component.html',
   styleUrls: ['./auditorium-seats.component.scss'],
 })
-export class AuditoriumSeatsComponent implements OnInit {
+export class AuditoriumSeatsComponent {
 
-  @Input()
-  public auditorium$: Observable<Auditorium> | undefined;
+  @Input() auditorium$: Observable<Auditorium> | undefined;
 
-  public auditorium: Auditorium | undefined;
-
-  ngOnInit(): void {
-    if (this.auditorium$) {
-      this.auditorium$
-        .subscribe((auditorium: Auditorium) => this.initializeAuditorium(auditorium));
-    }
-  }
-
-  private initializeAuditorium(auditorium: Auditorium) {
-    this.auditorium = auditorium;
-  }
 }

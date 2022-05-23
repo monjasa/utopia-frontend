@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AuditoriumPartRowSeat } from '../../models/auditorium-part-row-seat.model';
+import { AuditoriumSeat } from '../../models/auditorium-seat.model';
+import { COLOR_PALETTE } from '@shared/constants/auditorium-seat-color-palette.constants';
+import { AuditoriumSeatStatus } from '../../enums/auditorium-seat-status.enum';
 
 @Component({
   selector: 'admin-auditorium-seat',
@@ -8,11 +10,20 @@ import { AuditoriumPartRowSeat } from '../../models/auditorium-part-row-seat.mod
 })
 export class AuditoriumSeatComponent {
 
-  @Input() auditoriumSeat: AuditoriumPartRowSeat | undefined;
+  @Input() auditoriumSeat: AuditoriumSeat | undefined;
 
-  @Output() auditoriumSeatChange = new EventEmitter<AuditoriumPartRowSeat>();
+  @Output() auditoriumSeatChange = new EventEmitter<AuditoriumSeat>();
+
 
   auditoriumSeatChanged() {
     this.auditoriumSeatChange.emit(this.auditoriumSeat);
+  }
+
+  get color(): string {
+    return this.auditoriumSeat ? COLOR_PALETTE[this.auditoriumSeat.pricingPolicyDisplayPosition] : '';
+  }
+
+  get unavailable(): boolean {
+    return this.auditoriumSeat?.status === AuditoriumSeatStatus.UNAVAILABLE;
   }
 }

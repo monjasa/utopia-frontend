@@ -1,0 +1,8 @@
+<div class="d-grid gap-1">
+  <admin-auditorium-seat-pricing-policy
+      *ngFor="let auditoriumSeatPricingPolicy of auditoriumSeatPricingPolicies; index as i"
+      [auditoriumSeatPricingPolicy]="auditoriumSeatPricingPolicy"
+      [selected]="selectedIndex === i"
+      (auditoriumSeatPricingPolicyChange)="changeAuditoriumSeatPricingPolicy($event)">
+  </admin-auditorium-seat-pricing-policy>
+</div>

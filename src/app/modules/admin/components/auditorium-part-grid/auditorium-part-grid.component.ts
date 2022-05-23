@@ -1,36 +1,46 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuditoriumPart } from '../../models/auditorium-part.model';
-import { AuditoriumPartRowSeat } from '../../models/auditorium-part-row-seat.model';
+import { AuditoriumSeat } from '../../models/auditorium-seat.model';
+import { AuditoriumSeatPricingPolicyService } from '../../services/auditorium-seat-pricing-policy.service';
+import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatStatus } from '../../enums/auditorium-seat-status.enum';
 
 @Component({
   selector: 'admin-auditorium-part-grid',
   templateUrl: './auditorium-part-grid.component.html',
   styleUrls: ['./auditorium-part-grid.component.scss'],
 })
-export class AuditoriumPartGridComponent implements OnInit {
+export class AuditoriumPartGridComponent {
 
   @Input()
   public auditoriumPart: AuditoriumPart | undefined;
 
-  constructor() {
+  private auditoriumSeatPricingPolicy: AuditoriumSeatPricingPolicy | null | undefined;
+
+  constructor(private auditoriumSeatPricingPolicyService: AuditoriumSeatPricingPolicyService) {
+    this.auditoriumSeatPricingPolicyService.selected$
+      .subscribe((auditoriumSeatPricingPolicy: AuditoriumSeatPricingPolicy | null) => this.auditoriumSeatPricingPolicy = auditoriumSeatPricingPolicy);
   }
 
-  ngOnInit(): void {
-  }
-
-  changeAuditoriumSeat($event: AuditoriumPartRowSeat) {
-    console.log($event);
+  changeAuditoriumSeat($event: AuditoriumSeat) {
+    if (this.auditoriumSeatPricingPolicy) {
+      $event.pricingPolicyDisplayPosition = this.auditoriumSeatPricingPolicy.displayPosition;
+    } else {
+      $event.status = $event.status === AuditoriumSeatStatus.UNAVAILABLE
+        ? AuditoriumSeatStatus.AVAILABLE
+        : AuditoriumSeatStatus.UNAVAILABLE;
+    }
   }
 
   get gridTemplate(): string {
-    return `repeat(${this.auditoriumPartsRows}, 20px) / repeat(${this.auditoriumPartsSeats}, 20px)`;
+    return `repeat(${this.auditoriumPartRows}, 20px) / repeat(${this.auditoriumPartColumns}, 20px)`;
   }
 
-  get auditoriumPartsRows(): number {
+  get auditoriumPartRows(): number {
     return this.auditoriumPart?.dimension.rows ?? 0;
   }
 
-  get auditoriumPartsSeats(): number {
-    return this.auditoriumPart?.dimension.seats ?? 0;
+  get auditoriumPartColumns(): number {
+    return this.auditoriumPart?.dimension.columns ?? 0;
   }
 }

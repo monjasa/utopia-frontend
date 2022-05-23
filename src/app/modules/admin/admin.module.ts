@@ -13,6 +13,9 @@ import { AuditoriumSeatsComponent } from './components/auditorium-seats/auditori
 import { AuditoriumPartsGridComponent } from './components/auditorium-parts-grid/auditorium-parts-grid.component';
 import { AuditoriumSeatComponent } from './components/auditorium-seat/auditorium-seat.component';
 import { AuditoriumPartGridComponent } from './components/auditorium-part-grid/auditorium-part-grid.component';
+import { AuditoriumSeatPricingPoliciesComponent } from './components/auditorium-seat-pricing-policies/auditorium-seat-pricing-policies.component';
+import { AuditoriumSeatPricingPoliciesGroupComponent } from './components/auditorium-seat-pricing-policies-group/auditorium-seat-pricing-policies-group.component';
+import { AuditoriumSeatPricingPolicyComponent } from './components/auditorium-seat-pricing-policy/auditorium-seat-pricing-policy.component';
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import { AuditoriumPartGridComponent } from './components/auditorium-part-grid/a
     AuditoriumPartsGridComponent,
     AuditoriumSeatComponent,
     AuditoriumPartGridComponent,
+    AuditoriumSeatPricingPoliciesComponent,
+    AuditoriumSeatPricingPoliciesGroupComponent,
+    AuditoriumSeatPricingPolicyComponent,
   ],
   imports: [
     CommonModule,

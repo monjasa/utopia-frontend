@@ -1,5 +1,6 @@
 <div class="grid-container" *ngIf="auditoriumPart" [style.grid-template]="gridTemplate">
-  <admin-auditorium-seat *ngFor="let _ of [].constructor(auditoriumPartsRows * auditoriumPartsSeats)"
+  <admin-auditorium-seat *ngFor="let auditoriumSeat of auditoriumPart.seats"
+                         [auditoriumSeat]="auditoriumSeat"
                          (auditoriumSeatChange)="changeAuditoriumSeat($event)">
   </admin-auditorium-seat>
 </div>

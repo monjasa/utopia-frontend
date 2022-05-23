@@ -14,11 +14,8 @@
       </ng-container>
     </ol>
   </nav>
-  <div>
-    <ng-container [ngTemplateOutlet]="selected!.content"></ng-container>
+  <div *ngIf="selected">
+    <ng-container [ngTemplateOutlet]="selected.content">
+    </ng-container>
   </div>
-  <footer>
-    <button class="btn btn-primary" cdkStepperPrevious>Previous</button>
-    <button class="btn btn-primary" cdkStepperNext>Next</button>
-  </footer>
 </section>

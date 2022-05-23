@@ -1,9 +1,12 @@
 <div class="container-fluid">
   <h2>Auditorium</h2>
   <form *ngIf="auditoriumForm" [formGroup]="auditoriumForm">
-    <label for="auditorium-name">Name:</label>
-    <input type="text" id="auditorium-name" formControlName="name">
-
-    <p>{{auditoriumForm.value | json}}</p>
+    <label for="auditorium-name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="auditorium-name" formControlName="name">
   </form>
+
+  <footer class="mt-4 d-flex justify-content-center">
+    <button class="btn btn-primary mx-1" cdkStepperPrevious>Previous</button>
+    <button class="btn btn-primary mx-1" cdkStepperNext>Next</button>
+  </footer>
 </div>
