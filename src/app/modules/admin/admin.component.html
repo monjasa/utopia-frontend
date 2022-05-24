@@ -1,7 +1,6 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row mb-3">
     <button class="btn btn-primary" (click)="signOut()">Sign out</button>
   </div>
+  <router-outlet></router-outlet>
 </div>
-<admin-auditorium-stepper></admin-auditorium-stepper>
-<p class="text-light">{{idToken}}</p>

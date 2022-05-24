@@ -6,6 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
+    children: [
+      {
+        path: 'auditorium',
+        loadChildren: () => import('./auditorium/auditorium.module').then(m => m.AuditoriumModule),
+      },
+    ]
   },
 ];
 
