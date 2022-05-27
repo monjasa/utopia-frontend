@@ -11,7 +11,11 @@ const routes: Routes = [
         path: 'auditorium',
         loadChildren: () => import('./auditorium/auditorium.module').then(m => m.AuditoriumModule),
       },
-    ]
+      {
+        path: 'performance',
+        loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule),
+      },
+    ],
   },
 ];
 

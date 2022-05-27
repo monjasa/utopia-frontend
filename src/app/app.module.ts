@@ -9,6 +9,7 @@ import { environment } from '@environments/environment';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from '@core/interceptors';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { httpInterceptorProviders } from '@core/interceptors';
     AppRoutingModule,
     CoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     provideAuth(() => getAuth()),
   ],
   providers: [

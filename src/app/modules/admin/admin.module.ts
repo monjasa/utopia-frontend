@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import { SharedModule } from '@shared/shared.module';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PerformanceModule } from './performance/performance.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CdkStepperModule,
     AdminRoutingModule,
     SharedModule,
+    PerformanceModule,
   ],
 })
 export class AdminModule {

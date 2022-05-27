@@ -19,23 +19,36 @@ export class AuditoriumStepperComponent implements OnInit {
   auditoriumPartsForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.auditoriumForm = this.fb.group({
+    this.auditoriumForm = this.buildAuditoriumForm();
+    this.auditoriumSeatPricingPoliciesForm = this.buildAuditoriumSeatPricingPoliciesForm();
+    this.auditoriumPartsForm = this.buildAuditoriumPartsForm();
+  }
+
+  private buildAuditoriumForm() {
+    return this.fb.group({
       name: [undefined, Validators.required],
     });
-    this.auditoriumSeatPricingPoliciesForm = this.fb.group({
+  }
+
+  private buildAuditoriumSeatPricingPoliciesForm() {
+    return this.fb.group({
       seatPricingPolicies: this.fb.array([], Validators.required),
-    })
-    this.auditoriumPartsForm = this.fb.group({
+    });
+  }
+
+  private buildAuditoriumPartsForm() {
+    return this.fb.group({
       parts: this.fb.array([], Validators.required),
     });
   }
 
   ngOnInit(): void {
+    const auditoriumForm = this.auditoriumForm;
     const seatPricingPoliciesForm = this.auditoriumSeatPricingPoliciesForm.get('seatPricingPolicies') as FormGroup;
     const partsForm = this.auditoriumPartsForm.get('parts') as FormGroup;
 
     this.auditorium$ = combineLatest([
-      this.auditoriumForm.valueChanges,
+      auditoriumForm.valueChanges,
       seatPricingPoliciesForm.valueChanges,
       partsForm.valueChanges,
     ]).pipe(

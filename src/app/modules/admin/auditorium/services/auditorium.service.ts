@@ -5,14 +5,14 @@ import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuditoriumService {
 
   constructor(private http: HttpClient) {
   }
 
-  public createAuditorium(auditorium: Auditorium): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/admin/auditorium`, auditorium)
+  public createAuditorium(auditorium: Auditorium): Observable<Object> {
+    return this.http.post(`${environment.apiUrl}/admin/auditorium`, auditorium);
   }
 }

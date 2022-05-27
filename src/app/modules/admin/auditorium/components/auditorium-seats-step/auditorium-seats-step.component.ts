@@ -2,6 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, take, takeUntil } from 'rxjs';
 import { Auditorium } from '../../models/auditorium.model';
 import { AuditoriumService } from '../../services/auditorium.service';
+import { RoutingService } from '@core/services/routing.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'admin-auditorium-seats-step',
@@ -16,7 +18,11 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
 
   private componentDestroyed$: Subject<boolean> = new Subject();
 
-  constructor(private auditoriumService: AuditoriumService) {
+  constructor(
+    private auditoriumService: AuditoriumService,
+    private routingService: RoutingService,
+    private route: ActivatedRoute,
+  ) {
   }
 
   ngOnInit(): void {
@@ -33,13 +39,12 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
-  public createAuditorium(): void {
+  submit(): void {
     if (this.auditorium) {
       this.auditoriumService.createAuditorium(this.auditorium)
         .pipe(
           take(1),
-        )
-        .subscribe();
+        ).subscribe(() => this.routingService.redirectToSibling('all', this.route));
     }
   }
 }
