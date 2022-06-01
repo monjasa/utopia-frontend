@@ -1,9 +1,11 @@
-<div class="container-fluid">
-  <div class="row">
-    <button class="btn btn-dark" (click)="signIn()" role="button">
-      <img class="btn-thumb" alt="Google sign-in"
+<div class="container-fluid bg-dark d-flex justify-content-center h-100">
+  <div class="row form-sign-in w-100 m-auto">
+    <img class="logo" src="/assets/images/brand-logo.svg" alt="Logo" width="32">
+    <hr class="dropdown-divider text-light my-5">
+    <button class="btn btn-light p-2" (click)="signIn()" role="button">
+      <img class="btn-thumb me-2" alt="Google sign-in"
            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-      Login with Google
+      <span class="btn-label">Увійти за допомогою Google</span>
     </button>
   </div>
 </div>

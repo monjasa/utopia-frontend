@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>Створення глядацького залу</h1>
+  <shared-stepper linear="true">
+    <cdk-step [stepControl]="auditoriumForm">
+      <ng-template cdkStepLabel>
+        <span>Налаштувати глядацький зал</span>
+      </ng-template>
+      <admin-auditorium-step [auditoriumForm]="auditoriumForm"></admin-auditorium-step>
+    </cdk-step>
+
+    <cdk-step [stepControl]="auditoriumSeatPricingPoliciesForm">
+      <ng-template cdkStepLabel>
+        <span>Налаштувати цінову політику залу</span>
+      </ng-template>
+      <admin-auditorium-seat-pricing-policies-step
+          [formGroup]="auditoriumSeatPricingPoliciesForm"></admin-auditorium-seat-pricing-policies-step>
+    </cdk-step>
+
+    <cdk-step [stepControl]="auditoriumPartsForm">
+      <ng-template cdkStepLabel>
+        <span>Налаштувати частини залу</span>
+      </ng-template>
+      <admin-auditorium-parts-step [auditoriumPartsForm]="auditoriumPartsForm"></admin-auditorium-parts-step>
+    </cdk-step>
+
+    <cdk-step>
+      <ng-template cdkStepLabel>
+        <span>Налаштувати місця залу</span>
+      </ng-template>
+      <admin-auditorium-seats-step [auditorium$]="auditorium$"></admin-auditorium-seats-step>
+    </cdk-step>
+  </shared-stepper>
+</div>

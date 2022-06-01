@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <p class="fs-4 mb-3">Глядацький зал</p>
+  <form *ngIf="auditoriumForm" [formGroup]="auditoriumForm">
+    <label for="auditorium-name" class="form-label">Назва</label>
+    <input type="text" class="form-control" id="auditorium-name" formControlName="name" placeholder="Камерна сцена">
+  </form>
+
+  <footer class="mt-4 d-flex justify-content-end">
+    <button class="btn btn-primary" cdkStepperNext>
+      <span>Далі</span>
+      <i class="fa-solid fa-arrow-right fa-fw ms-2"></i>
+    </button>
+  </footer>
+</div>

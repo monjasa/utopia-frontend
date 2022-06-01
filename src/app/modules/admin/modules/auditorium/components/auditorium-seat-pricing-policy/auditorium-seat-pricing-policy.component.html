@@ -1,0 +1,9 @@
+<div class="d-grid" *ngIf="auditoriumSeatPricingPolicy" [style.--color]="color" (click)="auditoriumSeatPricingPolicyChanged()">
+  <input type="radio" class="btn-check" name="auditorium-seat-pricing-policy" autocomplete="off"
+         id="auditorium-seat-pricing-policy-{{auditoriumSeatPricingPolicy.displayPosition}}"
+         [checked]="selected">
+  <label class="btn btn-primary"
+         for="auditorium-seat-pricing-policy-{{auditoriumSeatPricingPolicy.displayPosition}}">
+    {{auditoriumSeatPricingPolicy.price}}₴
+  </label>
+</div>

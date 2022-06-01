@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <p class="fs-4 mb-3">Місця залу</p>
+  <div class="d-grid gap-2" *ngIf="auditorium">
+    <admin-auditorium-seat-pricing-policies [auditoriumSeatPricingPolicies]="auditorium.seatPricingPolicies">
+    </admin-auditorium-seat-pricing-policies>
+    <admin-auditorium-parts-grid [auditoriumParts]="auditorium.parts">
+    </admin-auditorium-parts-grid>
+  </div>
+
+  <footer class="mt-4 d-flex justify-content-end">
+    <button class="btn btn-link text-decoration-none me-3" cdkStepperPrevious>
+      <i class="fa-solid fa-arrow-left fa-fw me-2"></i>
+      <span>Назад</span>
+    </button>
+    <button class="btn btn-primary" (click)="submit()" cdkStepperNext>
+      <span>Створити глядацький зал</span>
+    </button>
+  </footer>
+</div>

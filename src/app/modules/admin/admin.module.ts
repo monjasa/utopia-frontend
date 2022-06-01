@@ -6,12 +6,14 @@ import { AdminComponent } from './admin.component';
 import { SharedModule } from '@shared/shared.module';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PerformanceModule } from './performance/performance.module';
+import { PerformanceModule } from './modules/performance/performance.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
+    SidebarComponent,
   ],
   imports: [
     CommonModule,

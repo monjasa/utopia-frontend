@@ -8,12 +8,12 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'auditorium',
-        loadChildren: () => import('./auditorium/auditorium.module').then(m => m.AuditoriumModule),
+        path: 'auditoriums',
+        loadChildren: () => import('./modules/auditorium/auditorium.module').then(m => m.AuditoriumModule),
       },
       {
-        path: 'performance',
-        loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule),
+        path: 'performances',
+        loadChildren: () => import('./modules/performance/performance.module').then(m => m.PerformanceModule),
       },
     ],
   },

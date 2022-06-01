@@ -1,18 +1,18 @@
 <section>
-  <header>
-    <h1>Step {{selectedIndex + 1}}</h1>
+  <header class="mb-3">
+    <p class="fs-4">Крок {{selectedIndex + 1}} з {{steps.length}}</p>
   </header>
-  <nav>
-    <ol>
-      <ng-container *ngFor="let step of steps; let i = index">
-        <li [class.fw-bold]="selectedIndex === i">
+  <nav class="mb-4">
+    <ul class="list-group">
+      <ng-container *ngFor="let step of steps; index as i">
+        <li class="list-group-item" [class.active]="selectedIndex === i">
           <a>
             <ng-container *ngIf="step.stepLabel; else labelText" [ngTemplateOutlet]="step.stepLabel.template"></ng-container>
             <ng-template #labelText>{{step.label}}</ng-template>
           </a>
         </li>
       </ng-container>
-    </ol>
+    </ul>
   </nav>
   <div *ngIf="selected">
     <ng-container [ngTemplateOutlet]="selected.content">

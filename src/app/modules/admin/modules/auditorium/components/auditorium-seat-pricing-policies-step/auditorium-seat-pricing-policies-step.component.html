@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <p class="fs-4 mb-3">Цінова політика залу</p>
+  <form *ngIf="formGroup" [formGroup]="formGroup">
+    <div class="container-fluid d-grid gap-1" formArrayName="seatPricingPolicies">
+      <div *ngFor="let _ of formArray.controls; let i = index" [formGroupName]="i">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="item-price-{{i}}" class="form-label">Ціна</label>
+            <div class="input-group">
+              <span class="input-group-text">₴</span>
+              <input type="number" class="form-control" id="item-price-{{i}}" formControlName="price" placeholder="100">
+            </div>
+          </div>
+        </div>
+        <div class="row d-grid mt-2">
+          <button type="button" class="btn btn-link text-decoration-none text-danger" (click)="removeItemFormGroup(i)">
+            <i class="fa-solid fa-minus me-2"></i>
+            <span>Видалити ціну</span>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" (click)="addItemFormGroup()">
+        <i class="fa-solid fa-plus me-2"></i>
+        <span>Додати ціну</span>
+      </button>
+    </div>
+  </form>
+
+  <footer class="mt-4 d-flex justify-content-end">
+    <button class="btn btn-link text-decoration-none me-3" cdkStepperPrevious>
+      <i class="fa-solid fa-arrow-left fa-fw me-2"></i>
+      <span>Назад</span>
+    </button>
+    <button class="btn btn-primary" (click)="onSubmit()" cdkStepperNext>
+      <span>Далі</span>
+      <i class="fa-solid fa-arrow-right fa-fw ms-2"></i>
+    </button>
+  </footer>
+</div>

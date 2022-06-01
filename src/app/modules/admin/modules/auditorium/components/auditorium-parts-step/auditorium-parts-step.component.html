@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <p class="fs-4 mb-3">Частини залу</p>
+  <form *ngIf="auditoriumPartsForm" [formGroup]="auditoriumPartsForm">
+    <div class="container-fluid d-grid gap-2" formArrayName="parts">
+      <div *ngFor="let _ of auditoriumPartsFormArray.controls; let i = index" [formGroupName]="i">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="auditorium-part-name-{{i}}" class="form-label">Назва</label>
+            <input type="text" class="form-control" id="auditorium-part-name-{{i}}" placeholder="Партер" formControlName="name">
+          </div>
+          <ng-container formGroupName="dimension">
+            <div class="col-6">
+              <label for="auditorium-part-rows-{{i}}" class="form-label">Кількість рядів</label>
+              <input type="number" class="form-control" id="auditorium-part-rows-{{i}}" placeholder="10" formControlName="rows">
+            </div>
+            <div class="col-6">
+              <label for="auditorium-part-columns-{{i}}" class="form-label">Кількість місць у ряду</label>
+              <input type="number" class="form-control" id="auditorium-part-columns-{{i}}" placeholder="15" formControlName="columns">
+            </div>
+          </ng-container>
+        </div>
+        <div class="row d-grid mt-2">
+          <button type="button" class="btn btn-link text-decoration-none text-danger" (click)="removeAuditoriumPartForm(i)">
+            <i class="fa-solid fa-minus me-2"></i>
+            <span>Видалити частину залу</span>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" (click)="addAuditoriumPartForm()">
+        <i class="fa-solid fa-plus me-2"></i>
+        <span>Додати частину залу</span>
+      </button>
+    </div>
+  </form>
+
+  <footer class="mt-4 d-flex justify-content-end">
+    <button class="btn btn-link text-decoration-none me-3" cdkStepperPrevious>
+      <i class="fa-solid fa-arrow-left fa-fw me-2"></i>
+      <span>Назад</span>
+    </button>
+    <button class="btn btn-primary" (click)="onSubmit()" cdkStepperNext>
+      <span>Далі</span>
+      <i class="fa-solid fa-arrow-right fa-fw ms-2"></i>
+    </button>
+  </footer>
+</div>
