@@ -3,17 +3,24 @@
  * Component-specific style should not go here and be included directly as part of the components.
  */
 
-// Theme variables, must be included before the libraries to allow overriding defaults
+/*
+ * Theme variables, must be included before the libraries to allow overriding defaults.
+ */
+
 @import "variables";
 
-// 3rd party libraries
+/*
+ * 3rd party libraries.
+ */
+
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/solid";
+@import "ngx-toastr/toastr";
 
-// Theme customization
+
+/*
+ * Theme customization.
+ */
+
 @import "theme";
-
-html, body {
-  height: 100%;
-}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,11 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from '@core/interceptors';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+
+import locale from '@angular/common/locales/uk';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(locale);
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     provideAuth(() => getAuth()),
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'uk-UA' },
     httpInterceptorProviders,
   ],
   bootstrap: [AppComponent],

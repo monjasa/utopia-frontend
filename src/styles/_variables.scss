@@ -5,3 +5,10 @@
 $primary: #fd950d;
 $dark: #131313;
 $min-contrast-ratio: 2.20;
+
+/*
+ * 3rd party libraries
+ */
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
