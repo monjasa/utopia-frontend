@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Auditorium } from '../../models/auditorium.model';
-import { AuditoriumPart } from '../../models/auditorium-part.model';
-import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
+import { Auditorium } from '@shared/models/auditorium/auditorium.model';
+import { AuditoriumPart } from '@shared/models/auditorium/auditorium-part.model';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
 import { combineLatest, map, Observable } from 'rxjs';
 
 @Component({

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { AuditoriumPart } from '../../models/auditorium-part.model';
+import { AuditoriumPart } from '@shared/models/auditorium/auditorium-part.model';
 
 import panzoom, { PanZoom, PanZoomOptions } from 'panzoom';
 

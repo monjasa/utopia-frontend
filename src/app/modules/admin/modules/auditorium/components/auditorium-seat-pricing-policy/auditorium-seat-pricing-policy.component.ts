@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { COLOR_PALETTE } from '@shared/constants/auditorium-color-palette.constants';
-import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
 
 @Component({
   selector: 'admin-auditorium-seat-pricing-policy',

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
-import { AuditoriumSeatPricingPolicyService } from '../../services/auditorium-seat-pricing-policy.service';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatPricingPolicyService } from '@core/services/auditorium/auditorium-seat-pricing-policy.service';
 
 @Component({
   selector: 'admin-auditorium-seat-pricing-policies',

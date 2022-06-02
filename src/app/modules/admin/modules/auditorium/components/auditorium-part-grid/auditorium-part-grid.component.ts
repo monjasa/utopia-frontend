@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { AuditoriumPart } from '../../models/auditorium-part.model';
-import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
-import { AuditoriumSeatPricingPolicyService } from '../../services/auditorium-seat-pricing-policy.service';
-import { AuditoriumSeat } from '../../models/auditorium-seat.model';
-import { AuditoriumSeatStatus } from '../../enums/auditorium-seat-status.enum';
+import { AuditoriumPart } from '@shared/models/auditorium/auditorium-part.model';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatPricingPolicyService } from '@core/services/auditorium/auditorium-seat-pricing-policy.service';
+import { AuditoriumSeat } from '@shared/models/auditorium/auditorium-seat.model';
+import { AuditoriumSeatStatus } from '@shared/models/auditorium/enums/auditorium-seat-status.enum';
 
 @Component({
   selector: 'admin-auditorium-part-grid',

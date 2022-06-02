@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { COLOR_PALETTE } from '@shared/constants/auditorium-color-palette.constants';
-import { AuditoriumSeat } from '../../models/auditorium-seat.model';
-import { AuditoriumSeatStatus } from '../../enums/auditorium-seat-status.enum';
+import { AuditoriumSeat } from '@shared/models/auditorium/auditorium-seat.model';
+import { AuditoriumSeatStatus } from '@shared/models/auditorium/enums/auditorium-seat-status.enum';
 
 @Component({
   selector: 'admin-auditorium-seat',
   templateUrl: './auditorium-seat.component.html',
-  styleUrls: ['./auditorium-seat.component.scss']
+  styleUrls: ['./auditorium-seat.component.scss'],
 })
 export class AuditoriumSeatComponent {
 

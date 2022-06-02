@@ -1,4 +1,4 @@
-import { AuditoriumSeatStatus } from '../enums/auditorium-seat-status.enum';
+import { AuditoriumSeatStatus } from './enums/auditorium-seat-status.enum';
 
 export interface AuditoriumSeat {
   rowPosition: number;

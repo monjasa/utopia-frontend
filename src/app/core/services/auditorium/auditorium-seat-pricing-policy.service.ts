@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { AuditoriumSeatPricingPolicy } from '../models/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
 
 @Injectable({
   providedIn: 'root'

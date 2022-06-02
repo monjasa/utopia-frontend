@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, take, takeUntil } from 'rxjs';
-import { Auditorium } from '../../models/auditorium.model';
-import { AuditoriumService } from '../../services/auditorium.service';
+import { Observable, Subject, takeUntil } from 'rxjs';
+import { AuditoriumService } from '@core/services/auditorium/auditorium.service';
+import { Auditorium } from '@shared/models/auditorium/auditorium.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -41,9 +41,7 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
   submit(): void {
     if (this.auditorium) {
       this.auditoriumService.createAuditorium(this.auditorium)
-        .pipe(
-          take(1),
-        ).subscribe(() => this.router.navigate(['../all'], { relativeTo: this.route }));
+        .subscribe(() => this.router.navigate(['../all'], { relativeTo: this.route }));
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { of, Subject, takeUntil } from 'rxjs';
-import { FilePreview } from '../../../modules/admin/performance/models/types/file-preview.type';
+import { FilePreview } from '@shared/models/common/file-preview.model';
 
 @Component({
   selector: 'shared-file-upload',

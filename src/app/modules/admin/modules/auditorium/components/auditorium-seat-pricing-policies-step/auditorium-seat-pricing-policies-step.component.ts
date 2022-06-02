@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuditoriumSeatPricingPolicy } from '../../models/auditorium-seat-pricing-policy.model';
+import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
 
 @Component({
   selector: 'admin-auditorium-seat-pricing-policies-step',

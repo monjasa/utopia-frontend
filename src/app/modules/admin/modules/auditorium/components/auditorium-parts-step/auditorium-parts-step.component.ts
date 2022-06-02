@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuditoriumSeat } from '../../models/auditorium-seat.model';
-import { AuditoriumSeatStatus } from '../../enums/auditorium-seat-status.enum';
-import { AuditoriumPartDimension } from '../../models/auditorium-part-dimension.model';
-import { AuditoriumPart } from '../../models/auditorium-part.model';
+import { AuditoriumSeat } from '@shared/models/auditorium/auditorium-seat.model';
+import { AuditoriumSeatStatus } from '@shared/models/auditorium/enums/auditorium-seat-status.enum';
+import { AuditoriumPartDimension } from '@shared/models/auditorium/auditorium-part-dimension.model';
+import { AuditoriumPart } from '@shared/models/auditorium/auditorium-part.model';
 
 @Component({
   selector: 'admin-auditorium-parts-step',

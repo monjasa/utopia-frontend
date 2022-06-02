@@ -1,7 +1,16 @@
 <div class="container-fluid">
-  <h1>Глядацькі зали</h1>
-  <p class="lead">
-    This is a lead paragraph. It stands out from regular paragraphs.
-  </p>
-  <a class="btn btn-primary" role="button" routerLink="../create">Створити глядацький зал</a>
+  <h1 class="mt-2 mb-4">Глядацькі зали</h1>
+  <div class="list-group mb-4">
+    <a class="list-group-item list-group-item-action" *ngFor="let auditorium of auditoriums">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{auditorium.name}}</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small>And some small print.</small>
+    </a>
+  </div>
+  <div class="d-grid">
+    <a class="btn btn-primary" role="button" routerLink="../create">Створити глядацький зал</a>
+  </div>
 </div>
