@@ -6,10 +6,9 @@ import panzoom, { PanZoom, PanZoomOptions } from 'panzoom';
 @Component({
   selector: 'admin-auditorium-parts-grid',
   templateUrl: './auditorium-parts-grid.component.html',
-  styleUrls: ['./auditorium-parts-grid.component.scss']
+  styleUrls: ['./auditorium-parts-grid.component.scss'],
 })
-export class AuditoriumPartsGridComponent implements AfterViewInit
-{
+export class AuditoriumPartsGridComponent implements AfterViewInit {
 
   @Input() auditoriumParts: AuditoriumPart[] | undefined;
 
@@ -21,7 +20,7 @@ export class AuditoriumPartsGridComponent implements AfterViewInit
     this.panZoom = panzoom(this.scene?.nativeElement, <PanZoomOptions>{
         bounds: true,
         minZoom: 0.50,
-        maxZoom: 2
+        maxZoom: 1.50,
       },
     );
   }

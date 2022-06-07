@@ -1,4 +1,4 @@
 export interface AuditoriumItem {
-  id: number,
-  name: string
+  id: number;
+  name: string;
 }

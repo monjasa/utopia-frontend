@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AuditoriumRoutingModule } from './auditorium-routing.module';
+import { AuditoriumAdminRoutingModule } from './auditorium-admin-routing.module';
 import { AuditoriumStepComponent } from './components/auditorium-step/auditorium-step.component';
 import { AuditoriumSeatPricingPoliciesStepComponent } from './components/auditorium-seat-pricing-policies-step/auditorium-seat-pricing-policies-step.component';
 import { AuditoriumPartsStepComponent } from './components/auditorium-parts-step/auditorium-parts-step.component';
@@ -34,11 +34,11 @@ import { AuditoriumListComponent } from './components/auditorium-list/auditorium
   ],
   imports: [
     CommonModule,
-    AuditoriumRoutingModule,
+    AuditoriumAdminRoutingModule,
     SharedModule,
     CdkStepperModule,
     ReactiveFormsModule,
   ],
 })
-export class AuditoriumModule {
+export class AuditoriumAdminModule {
 }

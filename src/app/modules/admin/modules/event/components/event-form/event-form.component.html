@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="mb-4">Створення події</h1>
+  <form class="row g-3" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="col-12">
+      <label for="performanceSelect" class="form-label">Вистава</label>
+      <select class="form-select" id="performanceSelect" formControlName="performance">
+        <option *ngFor="let performance of performances" [ngValue]="performance">{{performance.title}}</option>
+      </select>
+    </div>
+    <div class="col-12 col-sm-6">
+      <label for="auditoriumSelect" class="form-label">Глядацький зал</label>
+      <select class="form-select" id="auditoriumSelect" formControlName="auditorium">
+        <option *ngFor="let auditorium of auditoriums" [ngValue]="auditorium">{{auditorium.name}}</option>
+      </select>
+    </div>
+    <div class="col-12 col-sm-6">
+      <label for="startedAtInput" class="form-label">Час проведення</label>
+      <input type="datetime-local" class="form-control" id="startedAtInput"
+             [min]="minDateString" [max]="maxDateString" formControlName="startedAt">
+    </div>
+    <div class="col-12 d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary">Створити подію</button>
+    </div>
+  </form>
+</div>

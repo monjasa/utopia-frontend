@@ -3,6 +3,7 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 import { AuditoriumService } from '@core/services/auditorium/auditorium.service';
 import { Auditorium } from '@shared/models/auditorium/auditorium.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertService } from '@core/services/common/alert.service';
 
 @Component({
   selector: 'admin-auditorium-seats-step',
@@ -19,6 +20,7 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
 
   constructor(
     private auditoriumService: AuditoriumService,
+    private alertService: AlertService,
     private router: Router,
     private route: ActivatedRoute,
   ) {
@@ -41,7 +43,10 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
   submit(): void {
     if (this.auditorium) {
       this.auditoriumService.createAuditorium(this.auditorium)
-        .subscribe(() => this.router.navigate(['../all'], { relativeTo: this.route }));
+        .subscribe(() => {
+          this.router.navigate(['../all'], { relativeTo: this.route })
+            .then(() => this.alertService.showSuccessToast('Глядацький зал успішно створено'));
+        });
     }
   }
 }

@@ -1,4 +1,4 @@
 export interface AuditoriumPartDimension {
-  rows: number,
-  columns: number
+  rows: number;
+  columns: number;
 }

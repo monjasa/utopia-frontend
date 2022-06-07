@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="mb-4">Адміністрування</h1>
+  <div class="row my-lg-5 align-items-center rounded-3 border shadow mx-0">
+    <div class="col-lg-7 p-4 p-lg-5 pb-0">
+      <h1 class="display-4 fw-bold lh-1 pt-3">Події</h1>
+      <p class="lead">Створення та налаштування подій для вистав із репертуару театру. На цей тиждень заплановано 8
+        подій.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <a type="button" class="btn btn-primary px-4 me-md-2" routerLink="events/create">Створити нову подію</a>
+        <a type="button" class="btn text-primary px-4" routerLink="events">Найближчі події</a>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-4 offset-lg-1 p-0 overflow-hidden rounded-3">
+      <img class="lead-image" src="assets/images/theatre-auditorium.jpeg" alt="Глядацький зал театру">
+    </div>
+  </div>
+  <div class="row gy-5 row-cols-1 row-cols-lg-3 pt-5">
+    <admin-feature iconClass="fa-masks-theater" routerLinkCommand="performances">
+      <h2 title>Репертуар</h2>
+      <p paragraph>Налаштування вистав, що складають репертуар театру. Вистави є основою подій.</p>
+      <span cta>Перейти до репертуару</span>
+    </admin-feature>
+    <admin-feature iconClass="fa-kaaba" routerLinkCommand="auditoriums">
+      <h2 title>Глядацькі зали</h2>
+      <p paragraph>Налаштування глядацьких залів театру, частин глядацького залу і цінових політик.</p>
+      <span cta>Перейти до глядацьких залів</span>
+    </admin-feature>
+    <admin-feature iconClass="fa-people-group" routerLinkCommand="employees">
+      <h2 title>Персонал</h2>
+      <p paragraph>Налаштування корпоративних облікових записів працівників і доступу до системи.</p>
+      <span cta>Перейти до персоналу</span>
+    </admin-feature>
+  </div>
+</div>

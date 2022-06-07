@@ -1,7 +1,17 @@
-<div class="container-fluid">
-  <h1 class="mt-2 mb-4">Репертуар</h1>
-  <p class="lead">
-    This is a lead paragraph. It stands out from regular paragraphs.
-  </p>
-  <a class="btn btn-primary" role="button" routerLink="../create">Створити виставу</a>
+<div class="container">
+  <h1 class="mb-4">Репертуар</h1>
+  <div class="d-grid mb-4">
+    <a class="btn btn-primary" role="button" routerLink="../create">Створити виставу</a>
+  </div>
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action" *ngFor="let performance of performances">
+      <div class="d-flex w-100 justify-content-between align-items-start py-2">
+        <div class="d-grid">
+          <h5 class="mb-1">{{performance.title}}</h5>
+          <span>{{performance.genre.displayName}}</span>
+          <small class="text-muted">Коментар до вистави</small>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>

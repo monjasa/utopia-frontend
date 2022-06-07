@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '@environments/environment';
 import { PerformanceRequest } from '@shared/models/performance/performance-request.model';
 import { PerformanceItem } from '@shared/models/performance/performance-item.model';
+import { PerformanceConcise } from '@shared/models/performance/performance-concise.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,9 @@ export class PerformanceService {
 
   public getPerformanceItems(): Observable<PerformanceItem[]> {
     return this.http.get<PerformanceItem[]>(`${environment.apiUrl}/admin/performance/item/all`);
+  }
+
+  public getPerformancesConcise(): Observable<PerformanceConcise[]> {
+    return this.http.get<PerformanceConcise[]>(`${environment.apiUrl}/admin/performance/concise/all`);
   }
 }

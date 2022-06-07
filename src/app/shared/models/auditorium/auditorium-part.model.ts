@@ -5,5 +5,5 @@ export interface AuditoriumPart {
   name: string;
   displayPosition: number;
   dimension: AuditoriumPartDimension;
-  seats: AuditoriumSeat[]
+  seats: AuditoriumSeat[];
 }

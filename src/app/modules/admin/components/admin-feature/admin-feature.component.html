@@ -1,0 +1,12 @@
+<div class="col">
+  <div
+      class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3 shadow-sm">
+    <i class="fa-solid fa-fw" [ngClass]="iconClass"></i>
+  </div>
+  <ng-content select="[title]"></ng-content>
+  <ng-content select="[paragraph]"></ng-content>
+  <a class="link-primary text-decoration-none d-inline-flex align-items-center" [routerLink]="routerLinkCommand">
+    <ng-content select="[cta]"></ng-content>
+    <i class="fa-solid fa-angle-right mx-2"></i>
+  </a>
+</div>

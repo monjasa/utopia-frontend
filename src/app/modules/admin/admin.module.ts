@@ -6,14 +6,18 @@ import { AdminComponent } from './admin.component';
 import { SharedModule } from '@shared/shared.module';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PerformanceModule } from './modules/performance/performance.module';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PerformanceAdminModule } from './modules/performance/performance-admin.module';
+import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { AdminFeaturesComponent } from './components/admin-features/admin-features.component';
+import { AdminFeatureComponent } from './components/admin-feature/admin-feature.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    SidebarComponent,
+    AdminSidebarComponent,
+    AdminFeaturesComponent,
+    AdminFeatureComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     CdkStepperModule,
     AdminRoutingModule,
     SharedModule,
-    PerformanceModule,
+    PerformanceAdminModule,
   ],
 })
 export class AdminModule {
