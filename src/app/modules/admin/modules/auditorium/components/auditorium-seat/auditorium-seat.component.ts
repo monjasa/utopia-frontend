@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { COLOR_PALETTE } from '@shared/constants/auditorium-color-palette.constants';
-import { AuditoriumSeat } from '@shared/models/auditorium/auditorium-seat.model';
+import { AuditoriumSeatRequest } from '@shared/models/auditorium/auditorium-seat-request.model';
 import { AuditoriumSeatStatus } from '@shared/models/auditorium/enums/auditorium-seat-status.enum';
 
 @Component({
@@ -10,9 +10,9 @@ import { AuditoriumSeatStatus } from '@shared/models/auditorium/enums/auditorium
 })
 export class AuditoriumSeatComponent {
 
-  @Input() auditoriumSeat: AuditoriumSeat | undefined;
+  @Input() public auditoriumSeat: AuditoriumSeatRequest | undefined;
 
-  @Output() auditoriumSeatChange = new EventEmitter<AuditoriumSeat>();
+  @Output() public auditoriumSeatChange = new EventEmitter<AuditoriumSeatRequest>();
 
   auditoriumSeatChanged() {
     this.auditoriumSeatChange.emit(this.auditoriumSeat);

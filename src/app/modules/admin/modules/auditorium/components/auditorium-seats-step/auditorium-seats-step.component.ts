@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { AuditoriumService } from '@core/services/auditorium/auditorium.service';
-import { Auditorium } from '@shared/models/auditorium/auditorium.model';
+import { AuditoriumRequest } from '@shared/models/auditorium/auditorium-request.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from '@core/services/common/alert.service';
 
@@ -12,9 +12,9 @@ import { AlertService } from '@core/services/common/alert.service';
 })
 export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
 
-  @Input() auditorium$: Observable<Auditorium> | undefined;
+  @Input() auditorium$: Observable<AuditoriumRequest> | undefined;
 
-  public auditorium: Auditorium | undefined;
+  public auditorium: AuditoriumRequest | undefined;
 
   private componentDestroyed$: Subject<boolean> = new Subject();
 
@@ -31,7 +31,7 @@ export class AuditoriumSeatsStepComponent implements OnInit, OnDestroy {
       this.auditorium$
         .pipe(
           takeUntil(this.componentDestroyed$),
-        ).subscribe((auditorium: Auditorium) => this.auditorium = auditorium);
+        ).subscribe((auditorium: AuditoriumRequest) => this.auditorium = auditorium);
     }
   }
 

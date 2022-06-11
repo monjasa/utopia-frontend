@@ -1,6 +1,5 @@
-<div class="grid-container" *ngIf="auditoriumPart" [style.grid-template]="gridTemplate">
-  <admin-auditorium-seat *ngFor="let auditoriumSeat of auditoriumPart.seats"
-                         [auditoriumSeat]="auditoriumSeat"
-                         (auditoriumSeatChange)="changeAuditoriumSeat($event)">
+<div class="grid-container" *ngIf="auditoriumPart" [style.grid-template]="auditoriumPart | auditoriumDimensionGridTemplate">
+  <admin-auditorium-seat *ngFor="let auditoriumSeat of auditoriumPart.seats; trackBy: trackAuditoriumSeat"
+                         [auditoriumSeat]="auditoriumSeat" (auditoriumSeatChange)="changeAuditoriumSeat($event)">
   </admin-auditorium-seat>
 </div>

@@ -9,6 +9,10 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
+        path: '',
+        component: AdminFeaturesComponent,
+      },
+      {
         path: 'auditoriums',
         loadChildren: () => import('./modules/auditorium/auditorium-admin.module').then(m => m.AuditoriumAdminModule),
       },
@@ -19,10 +23,6 @@ const routes: Routes = [
       {
         path: 'events',
         loadChildren: () => import('./modules/event/event-admin.module').then(m => m.EventAdminModule),
-      },
-      {
-        path: '',
-        component: AdminFeaturesComponent,
       },
     ],
   },

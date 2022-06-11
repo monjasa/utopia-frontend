@@ -1,8 +1,8 @@
-import { AuditoriumPart } from './auditorium-part.model';
+import { AuditoriumPartRequest } from './auditorium-part-request.model';
 import { AuditoriumSeatPricingPolicy } from './auditorium-seat-pricing-policy.model';
 
-export interface Auditorium {
+export interface AuditoriumRequest {
   name: string;
+  parts: AuditoriumPartRequest[];
   seatPricingPolicies: AuditoriumSeatPricingPolicy[];
-  parts: AuditoriumPart[];
 }

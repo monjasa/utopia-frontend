@@ -4,8 +4,8 @@ import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+    path: '',
+    loadChildren: () => import('./modules/theatre/theatre.module').then(m => m.TheatreModule),
   },
   {
     path: 'auth',
@@ -15,11 +15,6 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
     ...canActivate(() => redirectUnauthorizedTo(['auth'])),
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
   },
 ];
 

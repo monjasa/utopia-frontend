@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Auditorium } from '@shared/models/auditorium/auditorium.model';
-import { AuditoriumPart } from '@shared/models/auditorium/auditorium-part.model';
+import { AuditoriumRequest } from '@shared/models/auditorium/auditorium-request.model';
+import { AuditoriumPartRequest } from '@shared/models/auditorium/auditorium-part-request.model';
 import { AuditoriumSeatPricingPolicy } from '@shared/models/auditorium/auditorium-seat-pricing-policy.model';
 import { combineLatest, map, Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { combineLatest, map, Observable } from 'rxjs';
 })
 export class AuditoriumStepperComponent implements OnInit {
 
-  auditorium$: Observable<Auditorium> | undefined;
+  auditorium$: Observable<AuditoriumRequest> | undefined;
 
   auditoriumForm: FormGroup;
   auditoriumSeatPricingPoliciesForm: FormGroup;
@@ -52,7 +52,7 @@ export class AuditoriumStepperComponent implements OnInit {
       seatPricingPoliciesForm.valueChanges,
       partsForm.valueChanges,
     ]).pipe(
-      map(([auditorium, auditoriumSeatPricingPolicies, auditoriumParts]: [Auditorium, AuditoriumSeatPricingPolicy[], AuditoriumPart[]]) => {
+      map(([auditorium, auditoriumSeatPricingPolicies, auditoriumParts]: [AuditoriumRequest, AuditoriumSeatPricingPolicy[], AuditoriumPartRequest[]]) => {
         auditorium.seatPricingPolicies = auditoriumSeatPricingPolicies;
         auditorium.parts = auditoriumParts;
         return auditorium;

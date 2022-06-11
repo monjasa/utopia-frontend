@@ -24,3 +24,16 @@
  */
 
 @import "theme";
+
+/*
+ * Theme customization.
+ */
+
+html {
+  height: 100%;
+  display: grid;
+}
+
+body {
+  display: grid;
+}
