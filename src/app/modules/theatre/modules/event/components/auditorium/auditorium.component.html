@@ -1,0 +1,13 @@
+<div class="auditorium-container overflow-hidden">
+  <div class="d-flex flex-column align-items-center justify-content-center gap-3" #auditoriumPartsElement>
+    <ng-container *ngFor="let auditoriumPart of auditorium?.parts">
+      <span>{{auditoriumPart.name}}</span>
+      <div class="d-grid gap-1" *ngIf="auditoriumPart"
+           [style.grid-template]="auditoriumPart | auditoriumDimensionGridTemplate">
+        <theatre-auditorium-seat *ngFor="let auditoriumSeat of auditoriumPart.seats" [auditoriumSeat]="auditoriumSeat"
+                                 (auditoriumSeatSelect)="selectAuditoriumSeat($event)">
+        </theatre-auditorium-seat>
+      </div>
+    </ng-container>
+  </div>
+</div>

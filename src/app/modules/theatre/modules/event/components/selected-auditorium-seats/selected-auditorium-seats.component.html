@@ -1,0 +1,16 @@
+<div class="d-flex flex-column gap-2 overflow-scroll w-100" style="height: 345px">
+  <div class="d-flex border rounded" *ngFor="let auditoriumSeat of auditoriumSeats"
+       [style.--color]="auditoriumSeat | auditoriumSeatColor">
+    <div class="price-label flex-grow-0"></div>
+    <div class="col m-3 d-flex justify-content-between">
+      <div>
+        <p class="h6">{{auditoriumSeat.partName}}</p>
+        <small class="me-1">Ряд {{auditoriumSeat.rowPosition + 1}}</small>
+        <small>Місце {{auditoriumSeat.columnPosition + 1}}</small>
+      </div>
+      <div>
+        <p class="h6">{{auditoriumSeat.pricingPolicy.price}}₴</p>
+      </div>
+    </div>
+  </div>
+</div>

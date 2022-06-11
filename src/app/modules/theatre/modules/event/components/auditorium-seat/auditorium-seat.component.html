@@ -1,0 +1,5 @@
+<div class="grid-element d-flex justify-content-center align-items-center" *ngIf="auditoriumSeat"
+     [ngClass]="auditoriumSeat | auditoriumSeatStyleClassesPipe" [style.--color]="auditoriumSeat | auditoriumSeatColor"
+     [class.selected]="selected" (click)="auditoriumSeatSelected()">
+    <i class="fa-solid fa-check fa-sm" *ngIf="selected"></i>
+</div>

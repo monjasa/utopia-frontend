@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="mb-4">Подія</h1>
+  <shared-stepper linear="true">
+    <cdk-step>
+      <ng-template cdkStepLabel>
+        <span>Місця в глядацькому залі</span>
+      </ng-template>
+      <theatre-auditorium-seats-step [event]="event"></theatre-auditorium-seats-step>
+    </cdk-step>
+    <cdk-step>
+      <ng-template cdkStepLabel>
+        <span>Контактна інформація</span>
+      </ng-template>
+    </cdk-step>
+    <cdk-step>
+      <ng-template cdkStepLabel>
+        <span>Оплата квитків</span>
+      </ng-template>
+    </cdk-step>
+  </shared-stepper>
+</div>

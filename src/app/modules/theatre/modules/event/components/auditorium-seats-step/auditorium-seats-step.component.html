@@ -1,0 +1,29 @@
+<div class="container-fluid g-0">
+  <div class="row align-items-stretch">
+    <div class="col-12 col-md-8 col-lg-9">
+      <p class="fs-4 mb-3">{{event?.auditorium?.name}}</p>
+      <theatre-auditorium *ngIf="event" [auditorium]="event.auditorium"
+                          (selectedAuditoriumSeatsChange)="changeSelectedAuditoriumSeats($event)">
+      </theatre-auditorium>
+    </div>
+    <div class="col d-flex flex-column">
+      <p class="fs-4 mb-3">Обрані місця</p>
+      <ng-container *ngIf="selectedAuditoriumSeats.length; else noSelectedAuditoriumSeats">
+        <theatre-selected-auditorium-seats [auditoriumSeats]="selectedAuditoriumSeats"></theatre-selected-auditorium-seats>
+        <div class="d-flex justify-content-between mt-3">
+          <p>Обрано місць: <span class="h6">{{selectedAuditoriumSeats.length}}</span></p>
+          <p class="h6">{{selectedAuditoriumSeatsPrice}}₴</p>
+        </div>
+        <div class="d-grid">
+          <button class="btn btn-primary mt-1" cdkStepperNext>Придбати квитки</button>
+        </div>
+      </ng-container>
+      <ng-template #noSelectedAuditoriumSeats>
+        <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+          <p class="text-center">Ви ще не обрали жодного місця</p>
+          <i class="fa-solid fa-ticket fa-4x text-muted"></i>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
