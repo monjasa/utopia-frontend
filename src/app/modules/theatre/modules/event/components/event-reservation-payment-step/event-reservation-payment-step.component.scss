@@ -1,0 +1,16 @@
+@import "variables";
+
+.list-group-radio .form-check-input {
+  z-index: 2;
+  margin-top: -0.5em;
+}
+
+.list-group-radio .list-group-item {
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.list-group-radio .form-check-input:checked + .list-group-item {
+  border-color: $primary;
+  box-shadow: 0 0 0 0.5px $primary;
+}

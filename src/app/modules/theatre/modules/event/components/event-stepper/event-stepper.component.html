@@ -5,17 +5,26 @@
       <ng-template cdkStepLabel>
         <span>Місця в глядацькому залі</span>
       </ng-template>
-      <theatre-auditorium-seats-step [event]="event"></theatre-auditorium-seats-step>
+      <theatre-auditorium-seats-step [event]="event"
+                                     (selectedAuditoriumSeatsChange)="changeSelectedAuditoriumSeats($event)">
+      </theatre-auditorium-seats-step>
     </cdk-step>
-    <cdk-step>
+    <cdk-step [stepControl]="visitorDetailsForm">
       <ng-template cdkStepLabel>
         <span>Контактна інформація</span>
       </ng-template>
+      <theatre-visitor-details-step [event]="event" [visitorDetailsForm]="visitorDetailsForm"
+                                    [selectedAuditoriumSeats]="selectedAuditoriumSeats"
+                                    (eventReservationCreate)="createEventReservation($event)">
+      </theatre-visitor-details-step>
     </cdk-step>
     <cdk-step>
       <ng-template cdkStepLabel>
         <span>Оплата квитків</span>
       </ng-template>
+      <theatre-event-reservation-payment-step [eventReservation]="eventReservation"
+                                              [selectedAuditoriumSeats]="selectedAuditoriumSeats">
+      </theatre-event-reservation-payment-step>
     </cdk-step>
   </shared-stepper>
 </div>

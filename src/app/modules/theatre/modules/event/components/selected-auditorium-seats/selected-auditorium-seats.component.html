@@ -1,4 +1,4 @@
-<div class="d-flex flex-column gap-2 overflow-scroll w-100" style="height: 345px">
+<div class="d-flex flex-column gap-2 overflow-auto w-100 pe-2" style="height: 345px">
   <div class="d-flex border rounded" *ngFor="let auditoriumSeat of auditoriumSeats"
        [style.--color]="auditoriumSeat | auditoriumSeatColor">
     <div class="price-label flex-grow-0"></div>

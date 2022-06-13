@@ -1,5 +1,5 @@
 <div class="container-fluid g-0">
-  <div class="row align-items-stretch">
+  <div class="row">
     <div class="col-12 col-md-8 col-lg-9">
       <p class="fs-4 mb-3">{{event?.auditorium?.name}}</p>
       <theatre-auditorium *ngIf="event" [auditorium]="event.auditorium"
@@ -15,13 +15,16 @@
           <p class="h6">{{selectedAuditoriumSeatsPrice}}₴</p>
         </div>
         <div class="d-grid">
-          <button class="btn btn-primary mt-1" cdkStepperNext>Придбати квитки</button>
+          <button class="btn btn-primary mt-1" cdkStepperNext>
+            <span>Придбати квитки</span>
+            <i class="fa-solid fa-angle-right ms-2"></i>
+          </button>
         </div>
       </ng-container>
       <ng-template #noSelectedAuditoriumSeats>
         <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
           <p class="text-center">Ви ще не обрали жодного місця</p>
-          <i class="fa-solid fa-ticket fa-4x text-muted"></i>
+          <i class="fa-solid fa-ticket fa-4x text-primary"></i>
         </div>
       </ng-template>
     </div>

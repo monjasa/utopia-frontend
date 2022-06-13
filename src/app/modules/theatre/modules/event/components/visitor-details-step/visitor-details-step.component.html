@@ -1,0 +1,36 @@
+<div class="container-fluid g-0">
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-9">
+      <p class="fs-4 mb-3">Контактна інформація</p>
+      <form *ngIf="visitorDetailsForm" [formGroup]="visitorDetailsForm">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Імʼя</label>
+          <input type="text" class="form-control" id="nameInput" formControlName="name" autocomplete="name">
+        </div>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Електронна пошта</label>
+          <input type="email" class="form-control" id="emailInput" formControlName="email" aria-describedby="emailHelp" autocomplete="email">
+          <div id="emailHelp" class="form-text">Ваша електронна пошта є конфіденційною інформацією і буде використана лише для отримання цифрових квитків.</div>
+        </div>
+      </form>
+    </div>
+    <div class="col d-flex flex-column">
+      <p class="fs-4 mb-3">Обрані місця</p>
+        <theatre-selected-auditorium-seats [auditoriumSeats]="selectedAuditoriumSeats"></theatre-selected-auditorium-seats>
+        <div class="d-flex justify-content-between mt-3">
+          <p>Обрано місць: <span class="h6">{{selectedAuditoriumSeats.length}}</span></p>
+          <p class="h6">{{selectedAuditoriumSeatsPrice}}₴</p>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary mt-1" (click)="onNext()">
+            <span>Перейти до оплати</span>
+            <i class="fa-solid fa-angle-right ms-2"></i>
+          </button>
+          <button type="button" class="btn btn-link text-decoration-none text-primary" (click)="onPrevious()">
+            <i class="fa-solid fa-angle-left me-2"></i>
+            <span>Обрати інші місця</span>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

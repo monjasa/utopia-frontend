@@ -12,6 +12,9 @@ import { EventStepperComponent } from './components/event-stepper/event-stepper.
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { AuditoriumSeatsStepComponent } from './components/auditorium-seats-step/auditorium-seats-step.component';
 import { VisitorDetailsStepComponent } from './components/visitor-details-step/visitor-details-step.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventReservationPaymentStepComponent } from './components/event-reservation-payment-step/event-reservation-payment-step.component';
+import { CountdownModule } from 'ngx-countdown';
 
 
 @NgModule({
@@ -22,12 +25,16 @@ import { VisitorDetailsStepComponent } from './components/visitor-details-step/v
     EventStepperComponent,
     AuditoriumSeatsStepComponent,
     VisitorDetailsStepComponent,
+    EventReservationPaymentStepComponent,
   ],
   imports: [
     CommonModule,
     EventRoutingModule,
     SharedModule,
     CdkStepperModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CountdownModule,
   ],
 })
 export class EventModule {
