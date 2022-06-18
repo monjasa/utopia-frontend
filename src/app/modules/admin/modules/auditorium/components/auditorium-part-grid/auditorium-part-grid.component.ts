@@ -25,9 +25,9 @@ export class AuditoriumPartGridComponent {
     if (this.auditoriumSeatPricingPolicy) {
       $event.pricingPolicyDisplayPosition = this.auditoriumSeatPricingPolicy.displayPosition;
     } else {
-      $event.status = $event.status === AuditoriumSeatStatus.UNAVAILABLE
-        ? AuditoriumSeatStatus.AVAILABLE
-        : AuditoriumSeatStatus.UNAVAILABLE;
+      $event.status = $event.status === AuditoriumSeatStatus.Unavailable
+        ? AuditoriumSeatStatus.Available
+        : AuditoriumSeatStatus.Unavailable;
     }
   }
 

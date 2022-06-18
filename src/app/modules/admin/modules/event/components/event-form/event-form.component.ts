@@ -35,7 +35,6 @@ export class EventFormComponent implements OnInit {
   ) {
     [this.minDate, this.maxDate] = this.buildDateConstraint();
     this.form = this.buildEventForm();
-    console.log(this.minDateString);
   }
 
   ngOnInit(): void {
@@ -49,9 +48,6 @@ export class EventFormComponent implements OnInit {
         this.auditoriums = auditoriums;
         this.selectAuditorium(this.auditoriums[0]);
       });
-
-    this.form.get('startedAt')?.valueChanges
-      .subscribe((startedAt: Date) => console.log(startedAt));
   }
 
   submit(): void {

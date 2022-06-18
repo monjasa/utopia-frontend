@@ -23,6 +23,6 @@ export class AuditoriumSeatComponent {
   }
 
   get unavailable(): boolean {
-    return this.auditoriumSeat?.status === AuditoriumSeatStatus.UNAVAILABLE;
+    return this.auditoriumSeat?.status === AuditoriumSeatStatus.Unavailable;
   }
 }

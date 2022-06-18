@@ -1,0 +1,48 @@
+<div class="container g-0">
+  <h1 class="mb-4">Ваші квитки</h1>
+  <div class="row d-grid mb-2">
+    <swiper [pagination]="true" [navigation]="true" *ngIf="eventReservation">
+      <ng-template *ngFor="let seatReservation of eventReservation.seatReservations" swiperSlide>
+        <div class="card flex-sm-row align-items-center gap-4 p-3 m-5 mt-2">
+          <qrcode [qrdata]="seatReservation.uuid" [width]="150" [margin]="0" elementType="svg"
+                  colorDark="#fd950d" colorLight="#ffffff">
+          </qrcode>
+          <div class="div d-grid gap-2">
+            <p class="h4">{{eventReservation.event.performance.title}}</p>
+            <span>
+              <i class="fa-solid fa-calendar fa-fw text-primary me-2"></i>
+              <span>{{eventReservation.event.startedAt | date:'fullDate'}}</span>
+              </span>
+            <span>
+              <i class="fa-solid fa-clock fa-fw text-primary me-2"></i>
+              <span>{{eventReservation.event.startedAt | date:'shortTime'}}</span>
+              <span> — </span>
+              <span>{{eventReservation.event.endedAt | date:'shortTime'}}</span>
+              </span>
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-kaaba fa-fw text-primary me-2"></i>
+              <div class="d-grid d-sm-block">
+                <span class="me-2">{{seatReservation.seat.partName}}</span>
+                <span>
+                  <span class="me-2">Ряд {{seatReservation.seat.rowPosition + 1}}</span>
+                  <span class="me-2">Місце {{seatReservation.seat.columnPosition + 1}}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+  <div class="row mb-4">
+    <div class="d-flex justify-content-center gap-2">
+      <i class="fa-solid fa-bookmark form-text mt-2"></i>
+      <span class="flex-grow-0 d-block form-text">
+        Збережіть посилання на придбані квитки або збережіть зображення кожного квитка.
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" routerLink="/">Повернутися до головної сторінки</button>
+  </div>
+</div>

@@ -59,7 +59,7 @@ export class AuditoriumPartsStepComponent implements OnInit {
         seats.push({
           rowPosition: i,
           columnPosition: j,
-          status: AuditoriumSeatStatus.AVAILABLE,
+          status: AuditoriumSeatStatus.Available,
           pricingPolicyDisplayPosition: 0,
         } as AuditoriumSeatRequest);
       }

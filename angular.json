@@ -27,7 +27,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": [
-              "panzoom"
+              "panzoom",
+              "@cordobo/qrcode"
             ],
             "assets": [
               "src/favicon.ico",

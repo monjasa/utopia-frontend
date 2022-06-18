@@ -16,7 +16,7 @@ export class EventListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventService.getEventsConciseSlice({ page: 0, size: 10 })
+    this.eventService.getEventsConciseSlice({ page: 0, size: 20 })
       .subscribe((events: Slice<EventConcise>) => this.events = events);
   }
 }

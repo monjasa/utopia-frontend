@@ -14,7 +14,7 @@ export class PaymentService {
   }
 
   public getPaymentCheckoutByEventReservationUuid(eventReservationUuid: string): Observable<PaymentCheckout> {
-    const redirectUrl = `${this.windowService.getOrigin()}/event-reservations/confirmation`;
+    const redirectUrl = `${this.windowService.getOrigin()}/event-reservations/callback`;
     return this.http.get<PaymentCheckout>(
       `${environment.apiUrl}/public/payment/checkout`,
       { params: { eventReservationUuid, redirectUrl } },

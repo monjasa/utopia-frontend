@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TheatreRoutingModule } from './theatre-routing.module';
 import { TheatreComponent } from './theatre.component';
+import { EventReservationModule } from './modules/event-reservation/event-reservation.module';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { TheatreComponent } from './theatre.component';
   imports: [
     CommonModule,
     TheatreRoutingModule,
+    EventReservationModule,
   ],
 })
 export class TheatreModule {

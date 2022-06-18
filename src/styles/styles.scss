@@ -15,11 +15,15 @@
  * 3rd party libraries.
  */
 
-@import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~bootstrap/scss/bootstrap";
 @import "ngx-toastr/toastr";
+
+@import "node_modules/swiper/swiper";
+@import "node_modules/swiper/modules/navigation/navigation";
+@import "node_modules/swiper/modules/pagination/pagination";
 
 /*
  * Theme customization.

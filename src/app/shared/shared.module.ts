@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AuditoriumDimensionGridTemplatePipe } from './pipes/auditorium-dimension-grid-template.pipe';
 import { AuditoriumSeatColorPipe } from '@shared/pipes/auditorium-seat-color.pipe';
 import { AuditoriumSeatStyleClassesPipe } from './pipes/auditorium-seat-style-classes.pipe';
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 @NgModule({
@@ -21,8 +22,10 @@ import { AuditoriumSeatStyleClassesPipe } from './pipes/auditorium-seat-style-cl
     CommonModule,
     CdkStepperModule,
     FormsModule,
+    QRCodeModule,
   ],
   exports: [
+    QRCodeModule,
     StepperComponent,
     FileUploadComponent,
     AuditoriumDimensionGridTemplatePipe,

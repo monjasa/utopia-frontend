@@ -10,7 +10,7 @@ export class AuditoriumSeatStyleClassesPipe implements PipeTransform {
   transform(auditoriumSeat: AuditoriumSeatReservation, ...args: unknown[]): { [styleClass: string]: boolean } {
     return {
       'reserved': auditoriumSeat.reserved,
-      'unavailable': auditoriumSeat.status == AuditoriumSeatStatus.UNAVAILABLE,
+      'unavailable': auditoriumSeat.status === AuditoriumSeatStatus.Unavailable,
     };
   }
 }
