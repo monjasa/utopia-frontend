@@ -8,6 +8,8 @@ import { AuditoriumDimensionGridTemplatePipe } from './pipes/auditorium-dimensio
 import { AuditoriumSeatColorPipe } from '@shared/pipes/auditorium-seat-color.pipe';
 import { AuditoriumSeatStyleClassesPipe } from './pipes/auditorium-seat-style-classes.pipe';
 import { QRCodeModule } from 'angularx-qrcode';
+import { CountdownFractionComponent } from './components/countdown-fraction/countdown-fraction.component';
+import { CountdownModule } from 'ngx-countdown';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { QRCodeModule } from 'angularx-qrcode';
     AuditoriumDimensionGridTemplatePipe,
     AuditoriumSeatColorPipe,
     AuditoriumSeatStyleClassesPipe,
+    CountdownFractionComponent,
   ],
   imports: [
     CommonModule,
     CdkStepperModule,
     FormsModule,
     QRCodeModule,
+    CountdownModule,
   ],
   exports: [
     QRCodeModule,
@@ -31,6 +35,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     AuditoriumDimensionGridTemplatePipe,
     AuditoriumSeatColorPipe,
     AuditoriumSeatStyleClassesPipe,
+    CountdownFractionComponent,
   ],
 })
 export class SharedModule {

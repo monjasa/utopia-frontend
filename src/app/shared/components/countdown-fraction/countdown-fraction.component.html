@@ -1,0 +1,12 @@
+<div>
+  <p class="mb-1">
+    <span>Залишилося часу: </span>
+    <countdown [config]="countdownConfig" (event)="handleEvent($event)" #countdown></countdown>
+  </p>
+  <div class="progress mb-2">
+    <div class="progress-bar progress-bar progress-bar-animated" role="progressbar"
+         [attr.aria-valuenow]="remainingFraction * 100 | number:'.2':'en'" aria-valuemin="0" aria-valuemax="100"
+         [style.width]="remainingFraction | percent:'.2':'en'">
+    </div>
+  </div>
+</div>
