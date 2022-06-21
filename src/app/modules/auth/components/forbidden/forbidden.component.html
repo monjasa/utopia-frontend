@@ -1,8 +1,14 @@
-<div class="container-fluid">
-  <div class="row">
-    <p>Forbidden</p>
-  </div>
-  <div class="row">
-    <button class="btn btn-primary" (click)="signOut()">Sign out</button>
+<div class="container-fluid bg-dark d-flex justify-content-center h-100">
+  <div class="row w-100 m-auto text-center">
+    <p class="code text-primary">403</p>
+    <h3 class="text-light">
+      <i class="fa-solid fa-lock me-2"></i>
+    </h3>
+    <h3 class="text-light mb-5">
+      У вас недостатньо прав для перегляду цієї сторінки
+    </h3>
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="signOut()">Повернутися до головної сторінки</button>
+    </div>
   </div>
 </div>

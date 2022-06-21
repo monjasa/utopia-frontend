@@ -21,6 +21,10 @@ export class AuthService {
     return signOut(this.auth);
   }
 
+  public getUser(): Observable<User | null> {
+    return this.user$;
+  }
+
   public getIdToken(): Observable<string | null> {
     return this.user$
       .pipe(

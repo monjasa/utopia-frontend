@@ -46,14 +46,14 @@
   <div class="dropdown flex-shrink-1 ms-auto mt-sm-auto ms-sm-0">
     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
        id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="https://lh3.googleusercontent.com/a/AATXAJyYKgDNv9MirpiTb2BucqRSpvYJsWhto5Yw53IU=s196"
+      <img [src]="user?.photoURL"
            alt="Profile picture" width="48" height="48" class="rounded-circle">
-      <span class="d-none d-sm-block ms-sm-3 text-truncate">Артур Кашапов</span>
+      <span class="d-none d-sm-block ms-sm-3 text-truncate">{{user?.displayName}}</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="profileDropdown">
       <li class="d-sm-none">
         <a class="dropdown-item text-center">
-          <span>Артур Кашапов</span>
+          <span>{{user?.displayName}}</span>
         </a>
       </li>
       <li class="d-sm-none">
