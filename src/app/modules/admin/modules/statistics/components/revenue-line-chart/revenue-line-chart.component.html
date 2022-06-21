@@ -1,0 +1,14 @@
+<div class="h-75">
+  <h4>Прибуток за місяцем</h4>
+  <ngx-charts-line-chart
+      [legend]="true"
+      [legendTitle]="'Джерело прибутку'"
+      [legendPosition]="legendPosition.Below"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showYAxisLabel]="true"
+      [yAxisLabel]="'Сума прибутку'"
+      [timeline]="true"
+      [results]="data">
+  </ngx-charts-line-chart>
+</div>

@@ -1,0 +1,20 @@
+<div class="container-fluid g-0">
+  <div class="row">
+    <admin-overview-card class="col-xl-3 col-md-6 mb-4" iconClass="fa-calendar-day">
+      <span title>Прибуток (місяць)</span>
+      <span figures>{{data['monthlyRevenue'] | currency:'UAH'}}</span>
+    </admin-overview-card>
+    <admin-overview-card class="col-xl-3 col-md-6 mb-4" iconClass="fa-calendar-week">
+      <span title>Прибуток (рік)</span>
+      <span figures>{{data['annualRevenue'] | currency:'UAH'}}</span>
+    </admin-overview-card>
+    <admin-overview-card class="col-xl-3 col-md-6 mb-4" iconClass="fa-masks-theater">
+      <span title>Проведено вистав</span>
+      <span figures>{{data['events']}}</span>
+    </admin-overview-card>
+    <admin-overview-card class="col-xl-3 col-md-6 mb-4" iconClass="fa-ticket">
+      <span title>Продано квитків</span>
+      <span figures>{{data['tickets']}}</span>
+    </admin-overview-card>
+  </div>
+</div>

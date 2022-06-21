@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="mb-4">Основна статистика</h1>
+  <div class="row mb-4">
+    <admin-overview-cards [data]="overviewData"></admin-overview-cards>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12 col-md-8 chart-container mb-3">
+      <admin-revenue-line-chart [data]="lineChartData"></admin-revenue-line-chart>
+    </div>
+    <div class="col-12 col-md-4 chart-container">
+      <admin-revenue-pie-chart [data]="pieChartData"></admin-revenue-pie-chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 chart-container">
+      <admin-performances-bar-chart [data]="barChartData"></admin-performances-bar-chart>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 
 import locale from '@angular/common/locales/uk';
 import { registerLocaleData } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(locale);
 
@@ -22,6 +23,7 @@ registerLocaleData(locale);
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     CoreModule,

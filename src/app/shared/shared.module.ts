@@ -10,6 +10,7 @@ import { AuditoriumSeatStyleClassesPipe } from './pipes/auditorium-seat-style-cl
 import { QRCodeModule } from 'angularx-qrcode';
 import { CountdownFractionComponent } from './components/countdown-fraction/countdown-fraction.component';
 import { CountdownModule } from 'ngx-countdown';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -26,10 +27,12 @@ import { CountdownModule } from 'ngx-countdown';
     CdkStepperModule,
     FormsModule,
     QRCodeModule,
+    NgxChartsModule,
     CountdownModule,
   ],
   exports: [
     QRCodeModule,
+    NgxChartsModule,
     StepperComponent,
     FileUploadComponent,
     AuditoriumDimensionGridTemplatePipe,

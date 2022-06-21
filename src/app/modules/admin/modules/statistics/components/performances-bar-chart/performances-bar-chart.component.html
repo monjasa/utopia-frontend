@@ -1,0 +1,13 @@
+<div class="h-75">
+  <h4>Найпопулярніші вистави за кількістю проданих квитків</h4>
+  <ngx-charts-bar-horizontal
+      [legend]="true"
+      [legendTitle]="'Назва вистави'"
+      [legendPosition]="legendPosition.Below"
+      [results]="data"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showYAxisLabel]="true"
+      [yAxisLabel]="'Кількість проданих квитків'">
+  </ngx-charts-bar-horizontal>
+</div>
