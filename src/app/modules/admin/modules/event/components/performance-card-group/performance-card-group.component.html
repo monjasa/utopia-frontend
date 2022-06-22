@@ -1,0 +1,12 @@
+<div class="group d-flex flex-row flex-nowrap gap-3 overflow-auto py-3">
+  <div class="performance-card" *ngFor="let performance of performances">
+    <img src="{{performance.attachments.posterUrl ?? '/assets/images/poster-placeholder.png'}}"
+         class="poster-image d-block rounded-3" alt="{{performance.title}} poster"
+         [ngClass]="{'border border-3 border-primary' : performance === selectedPerformance}"
+         (click)="performanceSelected(performance)">
+    <h5 class="title text-truncate mt-3 text-wrap">{{performance.title}}</h5>
+    <div class="text-secondary">
+      <span>{{performance.genre.displayName}}</span>
+    </div>
+  </div>
+</div>

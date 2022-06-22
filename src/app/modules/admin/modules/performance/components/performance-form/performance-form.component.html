@@ -2,36 +2,22 @@
   <h1 class="mb-4">Створення вистави</h1>
   <div class="row">
     <div class="col-sm-3 order-1 order-sm-0">
-      <p>Попередній перегляд</p>
-      <img class="poster-preview img-fluid bd-placeholder-img card-img-top"  *ngIf="posterPreview; else posterPlaceholder" [src]="posterPreview" alt="Попередній перегляд афіші">
+      <img class="poster-preview img-fluid rounded-3 mb-3"  *ngIf="posterPreview; else posterPlaceholder" [src]="posterPreview" alt="Попередній перегляд афіші">
       <ng-template #posterPlaceholder>
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg"
+        <svg class="rounded-3 mb-3" width="100%" height="300" xmlns="http://www.w3.org/2000/svg"
              role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
           <title>Афіша</title>
           <rect width="100%" height="100%" fill="#868e96"></rect>
         </svg>
       </ng-template>
-      <img class="backdrop-preview img-fluid card-img-bottom" *ngIf="backdropPreview; else backdropPlaceholder" [src]="backdropPreview" alt="Попередній перегляд основного зображення">
+      <img class="backdrop-preview img-fluid rounded-3" *ngIf="backdropPreview; else backdropPlaceholder" [src]="backdropPreview" alt="Попередній перегляд основного зображення">
       <ng-template #backdropPlaceholder>
-        <svg class="bd-placeholder-img card-img-bottom" width="200" xmlns="http://www.w3.org/2000/svg"
+        <svg class="rounded-3" width="100%" xmlns="http://www.w3.org/2000/svg"
              role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Афіша</title>
+          <title>Основне зображення</title>
           <rect width="100%" height="100%" fill="#868e96"></rect>
         </svg>
       </ng-template>
-      <div class="card-body">
-        <h5 class="card-title placeholder-glow">
-          <span class="placeholder col-6"></span>
-        </h5>
-        <p class="card-text placeholder-glow">
-          <span class="placeholder col-7"></span>
-          <span class="placeholder col-4"></span>
-          <span class="placeholder col-4"></span>
-          <span class="placeholder col-6"></span>
-          <span class="placeholder col-8"></span>
-        </p>
-        <a tabindex="-1" class="btn btn-primary disabled placeholder col-12"></a>
-      </div>
     </div>
     <form class="col-sm-9 mb-4 mb-sm-0" [formGroup]="form" (ngSubmit)="submit()">
       <div class="col-12 mb-3">
@@ -66,7 +52,7 @@
                             (filePreviewChange)="changeBackdropPreview($event)">
         </shared-file-upload>
       </div>
-      <div class="col-12 d-flex justify-content-end">
+      <div class="col-12 d-flex justify-content-end mt-4">
         <button type="submit" class="btn btn-primary">Створити виставу</button>
       </div>
     </form>

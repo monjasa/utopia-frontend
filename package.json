@@ -1,6 +1,6 @@
 {
   "name": "utopia",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "ng": "ng",
     "serve": "ng serve --host 0.0.0.0",

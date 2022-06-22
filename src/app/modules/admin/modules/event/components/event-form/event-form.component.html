@@ -2,10 +2,9 @@
   <h1 class="mb-4">Створення події</h1>
   <form class="row g-3" [formGroup]="form" (ngSubmit)="submit()">
     <div class="col-12">
-      <label for="performanceSelect" class="form-label">Вистава</label>
-      <select class="form-select" id="performanceSelect" formControlName="performance">
-        <option *ngFor="let performance of performances" [ngValue]="performance">{{performance.title}}</option>
-      </select>
+      <label class="form-label">Вистава</label>
+      <admin-performance-card-group [performances]="performances" (performanceSelect)="selectPerformance($event)">
+      </admin-performance-card-group>
     </div>
     <div class="col-12 col-sm-6">
       <label for="auditoriumSelect" class="form-label">Глядацький зал</label>
@@ -18,7 +17,7 @@
       <input type="datetime-local" class="form-control" id="startedAtInput"
              [min]="minDateString" [max]="maxDateString" formControlName="startedAt">
     </div>
-    <div class="col-12 d-flex justify-content-end">
+    <div class="col-12 d-flex justify-content-end mt-4">
       <button type="submit" class="btn btn-primary">Створити подію</button>
     </div>
   </form>

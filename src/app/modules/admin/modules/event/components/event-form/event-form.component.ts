@@ -50,6 +50,10 @@ export class EventFormComponent implements OnInit {
       });
   }
 
+  selectPerformance(performance: PerformanceItem | null): void {
+    this.form.get('performance')?.patchValue(performance);
+  }
+
   submit(): void {
     if (!this.form.valid) {
       this.alertService.showWarningToast('Неможливо створити подію через некоректне заповнення значень');
@@ -80,10 +84,6 @@ export class EventFormComponent implements OnInit {
       performance: [undefined, Validators.required],
       auditorium: [undefined, Validators.required],
     });
-  }
-
-  private selectPerformance(performance: PerformanceItem | null): void {
-    this.form.get('performance')?.patchValue(performance);
   }
 
   private selectAuditorium(auditorium: AuditoriumItem | null): void {

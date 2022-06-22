@@ -1,4 +1,4 @@
 export interface PerformanceAttachments {
-  posterUrl: string;
-  backdropUrl: string;
+  posterUrl: string | null;
+  backdropUrl: string | null;
 }

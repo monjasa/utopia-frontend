@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="mb-4">Створення облікового запису працівника</h1>
+  <form class="row g-3" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="col-12 col-sm-6">
+      <label for="firstNameInput" class="form-label">Імʼя</label>
+      <input type="text" class="form-control" id="firstNameInput" formControlName="firstName">
+    </div>
+    <div class="col-12 col-sm-6">
+      <label for="lastNameInput" class="form-label">Прізвище</label>
+      <input type="text" class="form-control" id="lastNameInput" formControlName="lastName">
+    </div>
+    <div class="col-12 col-sm-9">
+      <label for="emailInput" class="form-label">Електронна адреса</label>
+      <input type="text" class="form-control" id="emailInput" formControlName="email">
+    </div>
+    <div class="col-12 col-sm-3">
+      <label for="positionSelect" class="form-label">Посада</label>
+      <select class="form-select" id="positionSelect" formControlName="position">
+        <option *ngFor="let position of positions" [ngValue]="position">{{position.displayName}}</option>
+      </select>
+    </div>
+    <div class="col-12 d-flex justify-content-end mt-4">
+      <button type="submit" class="btn btn-primary">Створити обліковий запис працівника</button>
+    </div>
+  </form>
+</div>

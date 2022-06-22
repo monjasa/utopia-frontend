@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AdminFeaturesComponent } from './components/admin-features/admin-features.component';
+import { AuthPipe, canActivate, customClaims } from '@angular/fire/auth-guard';
+import { map, pipe } from 'rxjs';
+
+const scopeAuthPipe = pipe(customClaims, map(claims => claims.scope ? true : '/auth/forbidden')) as AuthPipe;
 
 const routes: Routes = [
   {
@@ -21,6 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/event/event-admin.module').then(m => m.EventAdminModule),
       },
       {
+        path: 'employees',
+        loadChildren: () => import('./modules/employee/employee.module').then(m => m.EmployeeModule),
+      },
+      {
         path: 'statistics',
         loadChildren: () => import('./modules/statistics/statistics.module').then(m => m.StatisticsModule),
       },
@@ -29,8 +37,8 @@ const routes: Routes = [
         component: AdminFeaturesComponent,
       },
     ],
+    ...canActivate(() => scopeAuthPipe),
   },
-
 ];
 
 @NgModule({
